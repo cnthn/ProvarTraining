@@ -74,13 +74,13 @@
       <clauses>
         <clause name="substeps" testItemId="6">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="7" title="Click the New Contact button">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="7" title="Click and Confirm the New Contact button">
               <arguments>
                 <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?binding=sf%3Aui%3Abinding%3Aobject%3Faction%3DNewContact%26object%3DContact&amp;name=NewContact"/>
+                  <value class="uiLocator" uri="ui:locator?name=NewContact&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DContact%26action%3DNewContact"/>
                 </argument>
                 <argument id="interaction">
-                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                  <value class="uiInteraction" uri="ui:interaction?name=actionWithOk"/>
                 </argument>
                 <argument id="hover">
                   <value class="value" valueClass="boolean">false</value>
@@ -98,15 +98,19 @@
                   <value class="uiWait" uri="default"/>
                 </argument>
                 <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Click the New Contact button</value>
+                  <value class="value" valueClass="string">Click and Confirm the New Contact button</value>
                 </argument>
                 <argument id="autoRetry"/>
+                <argument id="ieClickMethod">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+                <argument id="value"/>
               </arguments>
               <generatedParameters>
-                <apiParam group="value" name="hover" title="Hover before Clicking">
-                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                <apiParam group="value" name="value" seq="10000" title="Expected Message">
+                  <summary>The expected message.  The test will fail if this is populated and doesn't match the actual message.</summary>
                   <type>
-                    <booleanType/>
+                    <textType/>
                   </type>
                 </apiParam>
               </generatedParameters>
@@ -115,19 +119,19 @@
         </clause>
       </clauses>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="8" title="On SF Contact Record Type selection screen">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="8" title="On SF Contact Search screen">
       <arguments>
         <argument id="uiConnectionName">
           <value class="value" valueClass="string">Admin</value>
         </argument>
         <argument id="target">
-          <value class="uiTarget" uri="sf:ui:target?action=recordTypeNew&amp;object=Contact"/>
+          <value class="uiTarget" uri="sf:ui:target?object=Contact&amp;action=Search"/>
         </argument>
         <argument id="navigate">
           <value class="value" valueClass="string">Dont</value>
         </argument>
         <argument id="targetDescription">
-          <value class="value" valueClass="string">On SF Contact Record Type selection screen</value>
+          <value class="value" valueClass="string">On SF Contact Search screen</value>
         </argument>
         <argument id="windowSelection">
           <value class="value" valueClass="string">Default</value>
@@ -173,12 +177,26 @@
                   <value class="value" valueClass="string">Click the Continue button</value>
                 </argument>
                 <argument id="autoRetry"/>
+                <argument id="ieClickMethod">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
               </arguments>
               <generatedParameters>
-                <apiParam group="value" name="hover" title="Hover before Clicking">
+                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                   <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                   <type>
                     <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                  <summary>How the click should be executed for Internet Explorer.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                      </constraints>
+                    </choiceType>
                   </type>
                 </apiParam>
               </generatedParameters>
