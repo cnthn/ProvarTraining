@@ -406,19 +406,19 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="16" title="On SF Account Filter screen">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="16" title="On SF Account Brand Lookup screen">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">Admin</value>
                 </argument>
                 <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Account&amp;action=Filter"/>
+                  <value class="uiTarget" uri="sf:ui:target?lookup=AccountBrand"/>
                 </argument>
                 <argument id="navigate">
                   <value class="value" valueClass="string">Dont</value>
                 </argument>
                 <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Account Filter screen</value>
+                  <value class="value" valueClass="string">On SF Account Brand Lookup screen</value>
                 </argument>
                 <argument id="windowSelection">
                   <value class="value" valueClass="string">Default</value>
