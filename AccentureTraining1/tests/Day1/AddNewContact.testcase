@@ -74,10 +74,10 @@
       <clauses>
         <clause name="substeps" testItemId="6">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="7" title="Click and Confirm the Add to Call List button">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="7" title="Click and Confirm the View Contact Hierarchy button">
               <arguments>
                 <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?name=CreateCallList&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DContact%26action%3DCreateCallList"/>
+                  <value class="uiLocator" uri="ui:locator?name=ContactHierarchy&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DContact%26action%3DContactHierarchy"/>
                 </argument>
                 <argument id="interaction">
                   <value class="uiInteraction" uri="ui:interaction?name=actionWithOk"/>
@@ -98,7 +98,7 @@
                   <value class="uiWait" uri="default"/>
                 </argument>
                 <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Click and Confirm the Add to Call List button</value>
+                  <value class="value" valueClass="string">Click and Confirm the View Contact Hierarchy button</value>
                 </argument>
                 <argument id="autoRetry"/>
                 <argument id="ieClickMethod">
