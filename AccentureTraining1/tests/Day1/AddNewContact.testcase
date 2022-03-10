@@ -52,7 +52,7 @@
           <value class="uiTarget" uri="sf:ui:target?object=Contact&amp;recordType=Employee&amp;action=View"/>
         </argument>
         <argument id="navigate">
-          <value class="value" valueClass="string">Always</value>
+          <value class="value" valueClass="string">Dont</value>
         </argument>
         <argument id="targetDescription">
           <value class="value" valueClass="string">On SF Contact (Employee) View screen</value>
