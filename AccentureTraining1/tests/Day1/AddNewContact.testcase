@@ -70,6 +70,7 @@
         <argument id="captureAfter">
           <value class="value" valueClass="string">false</value>
         </argument>
+        <argument id="sfUiTargetObjectId"/>
       </arguments>
       <clauses>
         <clause name="substeps" testItemId="6">
